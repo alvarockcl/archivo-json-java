@@ -14,12 +14,13 @@ public class App
     	//byte[] data1 = j.cargarArchivoBase64("F://prueba.txt");
     	//System.out.println(data1.toString());
     	
-    	Archivo archivo = j.obtenerArchivo("F:\\prueba.txt");
+    	Archivo archivo = j.obtenerArchivo("F:/logo.png");
     	System.out.println(archivo.getRutaAbsoluta());
     	System.out.println(archivo.getNombreExtension());
     	System.out.println(archivo.getNombre());
     	System.out.println(archivo.getExtension());
     	System.out.println(archivo.getContenido());
+    	j.generarJson(archivo, archivo.getRutaAbsoluta());
     	System.out.println("--------------------------------------------");
     }
 

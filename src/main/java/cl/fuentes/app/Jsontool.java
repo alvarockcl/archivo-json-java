@@ -8,6 +8,10 @@ import java.util.Base64;
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.io.FilenameUtils;
 
+import org.codehaus.jackson.JsonGenerationException;
+import org.codehaus.jackson.map.JsonMappingException;
+import org.codehaus.jackson.map.ObjectMapper;
+
 public class Jsontool {
 
 	
@@ -34,6 +38,25 @@ public class Jsontool {
 		archivo.setExtension(FilenameUtils.getExtension(ruta));
 		archivo.setContenido(cargarArchivoBase64(ruta));
 		return archivo;
+	}
+	
+	public void generarJson(Archivo archivo, String ruta) {
+		
+		ObjectMapper mapper = new ObjectMapper();
+		try {
+			mapper.writeValue(new File(ruta + archivo.getNombre() + ".json"), archivo);
+			String jsonInString = mapper.writeValueAsString(archivo);
+			System.out.println(jsonInString);
+			jsonInString = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(archivo);
+			System.out.println(jsonInString);
+		} catch (JsonGenerationException e) {
+			e.printStackTrace();
+		} catch (JsonMappingException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		
 	}
 	
 	
