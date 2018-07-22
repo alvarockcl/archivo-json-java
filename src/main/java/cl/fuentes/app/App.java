@@ -34,7 +34,7 @@ public class App
     		archivo = jsontool.obtenerArchivo(file.getCanonicalPath()); 
     		jsontool.generarJson(archivo,archivo.getRutaAbsoluta());
     	}
-    	
+    	System.out.println("--------------------------------------------");
     }
 
 }
