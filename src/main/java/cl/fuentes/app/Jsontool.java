@@ -67,6 +67,10 @@ public class Jsontool {
 		
 	}
 	
+	public void guardarArchivo(){
+		
+		
+	}
 	
 	
 }
