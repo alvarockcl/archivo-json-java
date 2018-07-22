@@ -2,6 +2,7 @@ package cl.fuentes.app;
 
 import java.io.File;
 import java.io.IOException;
+import java.sql.SQLException;
 //import java.util.Base64;
 import java.util.Base64;
 import java.util.List;
@@ -15,6 +16,11 @@ import org.codehaus.jackson.map.ObjectMapper;
 
 public class Jsontool {
 
+	MysqlConn mc;
+	
+	public Jsontool() throws Exception{
+		mc = new MysqlConn();
+	}
 	
 	public byte[] cargarArchivo(String ruta) throws IOException {
 
@@ -67,9 +73,13 @@ public class Jsontool {
 		
 	}
 	
-	public void guardarArchivo(){
+	public void guardarArchivo(Archivo archivo) throws Exception{
 		
-		
+		try {
+			mc.guardarArchivo(archivo);
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
 	}
 	
 	

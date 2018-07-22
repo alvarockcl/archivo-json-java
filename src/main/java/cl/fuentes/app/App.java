@@ -27,12 +27,14 @@ public class App
     	*/
     	
     	// genera archivos json por cada uno en la ruta determinada
+    	System.out.println("--------------------------------------------");
     	Archivo archivo = new Archivo();
     	List<File> files = jsontool.obtenerListadir("D:/ZZZ");
     	for (File file : files) {
     		System.out.println("file: " + file.getCanonicalPath());
     		archivo = jsontool.obtenerArchivo(file.getCanonicalPath()); 
-    		jsontool.generarJson(archivo,archivo.getRutaAbsoluta());
+    		//jsontool.generarJson(archivo,archivo.getRutaAbsoluta());
+    		jsontool.guardarArchivo(archivo);
     	}
     	System.out.println("--------------------------------------------");
     }
