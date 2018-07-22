@@ -1,13 +1,25 @@
 package cl.fuentes.app;
 
+
 public class App 
 {
     public static void main( String[] args ) throws Exception
     {
-		// Aquí el código
+    	Jsontool j = new Jsontool();
+		
     	System.out.println("--------------------------------------------");
-    	System.out.println("Hola Mundo!!!");
-    	System.in.read();
+    	//byte[] data = j.cargarArchivo("F://prueba.txt");
+    	//System.out.println(data.toString());
+
+    	//byte[] data1 = j.cargarArchivoBase64("F://prueba.txt");
+    	//System.out.println(data1.toString());
+    	
+    	Archivo archivo = j.obtenerArchivo("F:\\prueba.txt");
+    	System.out.println(archivo.getRutaAbsoluta());
+    	System.out.println(archivo.getNombreExtension());
+    	System.out.println(archivo.getNombre());
+    	System.out.println(archivo.getExtension());
+    	System.out.println(archivo.getContenido());
     	System.out.println("--------------------------------------------");
     }
 
