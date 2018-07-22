@@ -29,6 +29,7 @@ public class MysqlConn {
 				throw e;
 			}
 	    }
+
 	    public void guardarArchivo(Archivo archivo) throws Exception{
 	    	try {
 	    			preparedStatement = connect.prepareStatement("insert into archivo(rutaAbsoluta, nombreExtension, nombre, extension, contenido) values (?, ?, ?, ?, ?)");
