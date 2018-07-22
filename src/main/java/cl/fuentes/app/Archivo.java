@@ -23,8 +23,7 @@ public class Archivo {
 	
 	
 	public String getRutaAbsoluta() {
-		return rutaAbsoluta;
-	}
+		return rutaAbsoluta;	}
 
 	public void setRutaAbsoluta(String rutaAbsoluta) {
 		this.rutaAbsoluta = rutaAbsoluta;
