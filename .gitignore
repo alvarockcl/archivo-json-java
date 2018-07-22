@@ -1,1 +1,5 @@
-/target/
+target/
+.settings/
+.classpath
+.project
+src/test/java/cl/fuentes/app/AppTest.java
